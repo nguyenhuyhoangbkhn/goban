@@ -21,3 +21,17 @@ en:
     update_profile: "Update profile"
     update_profile: "Update profile"
     sign_up: "Sign Up"
+    not_authorized: "You are not authorized to access this page"
+  message:
+    new_provincial_successful: "add provincial successful"
+    edit_provincial_successful: "edit provincial successful"
+    delete_provincial_successful: "delete provincial successful"
+    delete_provincial_unsuccessful: "delete provincial successful"
+  error:
+    form: "Form: "
+    error: "errors"
+  provincial:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"

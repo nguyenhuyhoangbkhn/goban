@@ -1,0 +1,16 @@
+<tr>
+  <td class="center"><%= provincial.name %></td>
+  <td>
+    <%= link_to t("provincial.show"), admin_provincial_path(provincial),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("provincial.edit"), edit_admin_provincial_path(provincial),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("provincial.delete"), admin_provincial_path(provincial),
+      method: :delete, data: {confirm: t("provincial.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>
