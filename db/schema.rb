@@ -16,40 +16,40 @@ ActiveRecord::Schema.define(version: 20161103133314) do
   create_table "addresses", force: :cascade do |t|
     t.string   "building_name"
     t.integer  "addressale_id"
-    t.integer  "addressale_type"
+    t.integer  "addressale_kind"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "hotels_id"
+    t.integer  "hotel_id"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["hotels_id"], name: "index_comments_on_hotels_id"
+  add_index "comments", ["hotel_id"], name: "index_comments_on_hotel_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "districs", force: :cascade do |t|
     t.string   "name"
-    t.integer  "type"
-    t.integer  "provincials_id"
+    t.integer  "kind"
+    t.integer  "provincial_id"
     t.string   "latitude"
     t.string   "longitude"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "districs", ["provincials_id"], name: "index_districs_on_provincials_id"
+  add_index "districs", ["provincial_id"], name: "index_districs_on_provincial_id"
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name"
-    t.integer  "addresses_id"
+    t.integer  "address_id"
     t.integer  "countRoom"
     t.text     "introduction"
-    t.string   "type"
+    t.string   "kind"
     t.decimal  "price"
     t.string   "phone_number"
     t.string   "websitehotel"
@@ -57,20 +57,20 @@ ActiveRecord::Schema.define(version: 20161103133314) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "hotels", ["addresses_id"], name: "index_hotels_on_addresses_id"
+  add_index "hotels", ["address_id"], name: "index_hotels_on_address_id"
 
   create_table "images", force: :cascade do |t|
-    t.integer  "hotels_id"
+    t.integer  "hotel_id"
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "images", ["hotels_id"], name: "index_images_on_hotels_id"
+  add_index "images", ["hotel_id"], name: "index_images_on_hotel_id"
 
   create_table "provincials", force: :cascade do |t|
     t.string   "name"
-    t.integer  "type"
+    t.integer  "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,14 +105,14 @@ ActiveRecord::Schema.define(version: 20161103133314) do
 
   create_table "villages", force: :cascade do |t|
     t.string   "name"
-    t.integer  "type"
-    t.integer  "districs_id"
+    t.integer  "kind"
+    t.integer  "distric_id"
     t.string   "latitude"
     t.string   "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "villages", ["districs_id"], name: "index_villages_on_districs_id"
+  add_index "villages", ["distric_id"], name: "index_villages_on_distric_id"
 
 end

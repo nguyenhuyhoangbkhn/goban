@@ -12,6 +12,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "bootstrap-sass"
 gem "devise"
 gem "carrierwave" , "0.10.0"
+gem "cancancan"
+gem "kaminari"
+gem "kaminari-bootstrap", "~> 3.0.1"
 
 group :development, :test do
   gem 'byebug'
