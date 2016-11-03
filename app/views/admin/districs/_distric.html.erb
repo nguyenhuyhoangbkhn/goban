@@ -1,0 +1,16 @@
+<tr>
+  <td class="center"><%= distric.name %></td>
+  <td>
+    <%= link_to t("distric.show"), admin_distric_path(distric),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("distric.edit"), edit_admin_distric_path(distric),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("distric.delete"), admin_distric_path(distric),
+      method: :delete, data: {confirm: t("distric.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>
