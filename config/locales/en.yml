@@ -27,10 +27,19 @@ en:
     edit_provincial_successful: "edit provincial successful"
     delete_provincial_successful: "delete provincial successful"
     delete_provincial_unsuccessful: "delete provincial successful"
+    new_distric_successful: "add distric successful"
+    edit_distric_successful: "edit distric successful"
+    delete_distric_successful: "delete distric successful"
+    delete_distric_unsuccessful: "delete distric successful"
   error:
     form: "Form: "
     error: "errors"
   provincial:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  distric:
     edit: "Edit"
     delete: "Delete"
     confirm: "Are you sure?"
