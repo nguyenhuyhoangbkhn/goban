@@ -1,0 +1,16 @@
+<tr>
+  <td class="center"><%= hotel.name %></td>
+  <td>
+    <%= link_to t("hotel.show"), admin_hotel_path(hotel),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("hotel.edit"), edit_admin_hotel_path(hotel),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("hotel.delete"), admin_hotel_path(hotel),
+      method: :delete, data: {confirm: t("hotel.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>

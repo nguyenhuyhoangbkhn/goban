@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :districs
     resources :villages
     resources :addresses
+    resources :hotels
     resources :main, only: :index
   end
 end
