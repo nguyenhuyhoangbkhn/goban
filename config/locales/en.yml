@@ -31,6 +31,10 @@ en:
     edit_distric_successful: "edit distric successful"
     delete_distric_successful: "delete distric successful"
     delete_distric_unsuccessful: "delete distric successful"
+    new_village_successful: "add village successful"
+    edit_village_successful: "edit village successful"
+    delete_village_successful: "delete village successful"
+    delete_village_unsuccessful: "delete village successful"
   error:
     form: "Form: "
     error: "errors"
@@ -40,6 +44,11 @@ en:
     confirm: "Are you sure?"
     show: "Show"
   distric:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  village:
     edit: "Edit"
     delete: "Delete"
     confirm: "Are you sure?"
