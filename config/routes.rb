@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
   get "home" => "static_pages#home"
-  resources :hotels, only: [:index, :show]
+  resources :hotels, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy]
+  end
   
   namespace :admin do
     root "mains#index"

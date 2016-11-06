@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   validates :state, presence: true, length: {maximum: 50}
   validates :phone, length: {minimum: 10, maximum: 11}
 
+  has_many :comments, dependent: :destroy
   private
   def picture_size
     if picture.size > 5.megabytes

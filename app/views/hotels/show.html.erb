@@ -14,3 +14,22 @@
 <p>Kind: <%= @hotel.kind%></p>
 <p>countRoom: <%= @hotel.countRoom%></p>
 
+<div>
+  <div id="comment-form">
+  	<%= render 'shared/comment_form' if user_signed_in? %>
+  </div>
+  <div class="col-md-8">
+      <% if @hotel.comments.any? %>
+        Comments:
+        <strong id="comment_number">
+          <%= @hotel.comments.count %>
+        </strong>
+        <ol class="hotel">
+        	<div id = 'comments'>      
+  	        <%= render @comments %>
+  	   	</div>
+         </ol>
+        <%= paginate @comments %>
+      <% end %>
+  </div>
+</div>
