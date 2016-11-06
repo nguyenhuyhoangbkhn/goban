@@ -1,0 +1,16 @@
+<% unless @hotel.images.nil? %>
+  <% @hotel.images.each do |image| %>
+    <div class="item">
+      <%= image_tag image.picture, height: "40", with: "100" %>
+    </div>
+  <% end %>
+<% end %>
+<p><%= @hotel.address.building_name unless @hotel.address.nil? %></p>
+<p>Name: <%= @hotel.name %></p>
+<p>Price: <%= @hotel.price %></p>
+<p>Intro: <%= @hotel.introduction%></p>
+<p>phone: <%= @hotel.phone_number%></p>
+<p>Site: <%= @hotel.websitehotel%></p>
+<p>Kind: <%= @hotel.kind%></p>
+<p>countRoom: <%= @hotel.countRoom%></p>
+
