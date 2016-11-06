@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20161103133314) do
 
   create_table "districs", force: :cascade do |t|
     t.string   "name"
-    t.integer  "kind"
     t.integer  "provincial_id"
     t.string   "latitude"
     t.string   "longitude"
@@ -76,7 +75,6 @@ ActiveRecord::Schema.define(version: 20161103133314) do
 
   create_table "provincials", force: :cascade do |t|
     t.string   "name"
-    t.integer  "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,7 +109,6 @@ ActiveRecord::Schema.define(version: 20161103133314) do
 
   create_table "villages", force: :cascade do |t|
     t.string   "name"
-    t.integer  "kind"
     t.integer  "distric_id"
     t.string   "latitude"
     t.string   "longitude"

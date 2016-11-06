@@ -48,6 +48,6 @@ class Admin::VillagesController < ApplicationController
 
   private
   def village_params
-    params.require(:village).permit :name, :distric_id, :kind, :latitude, :longitude
+    params.require(:village).permit :name, :distric_id, :latitude, :longitude
   end
 end

@@ -6,11 +6,6 @@
       <%= f.label :name %><br/>
       <%= f.text_field :name, class: "form-control" %>
 
-      <div class="input-group">
-      <%= f.label :kind %><br/>
-      <%= f.select :kind, Provincial.kinds.keys,
-        class: "form-control" %>
-      </div>
       <div class="actions">
         <%= f.submit "Submit", class: "btn-primary btn-setdefault" %>
       </div>

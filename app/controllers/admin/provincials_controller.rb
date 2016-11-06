@@ -44,6 +44,6 @@ class Admin::ProvincialsController < ApplicationController
 
   private
   def provincial_params
-    params.require(:provincial).permit :name, :kind
+    params.require(:provincial).permit :name
   end
 end
