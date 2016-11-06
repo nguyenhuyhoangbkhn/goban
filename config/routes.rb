@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     root "mains#index"
     resources :provincials
     resources :districs
+    resources :villages
     resources :main, only: :index
   end
 end

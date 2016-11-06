@@ -1,0 +1,16 @@
+<tr>
+  <td class="center"><%= village.name %></td>
+  <td>
+    <%= link_to t("village.show"), admin_village_path(village),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("village.edit"), edit_admin_village_path(village),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("village.delete"), admin_village_path(village),
+      method: :delete, data: {confirm: t("village.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>
