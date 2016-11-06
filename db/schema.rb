@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161103133314) do
     t.integer  "user_id"
     t.integer  "hotel_id"
     t.string   "content"
+    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

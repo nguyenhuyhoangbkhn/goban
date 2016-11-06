@@ -4,5 +4,7 @@ class HotelsController < ApplicationController
   end
 
   def show
+    @comment = @hotel.comments.new
+  	@comments = @hotel.comments.page(params[:page]).per 10
   end
 end
