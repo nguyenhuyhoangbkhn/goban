@@ -10,12 +10,28 @@
   </head>
   <body>
     <%= render "layouts/header" %>
-    <div class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <%= yield %>
-      <%= debug params if Rails.env.development? %>
+    <div class="container row" >
+      <div class="col-md-3 col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="">Hotel</a></li>
+            <li><a href="#">City</a></li>
+            <li><a href="#">trousers</a></li>
+            <li><a href="#">village</a></li>
+            <li><a href="#">Setting</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9 col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class= "clear"></div>
+            <br>
+            <div class="content-admin">
+              <% flash.each do |message_type, message| %>
+                <div class="infor-request alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+              <%= yield %>
+              <%= debug params if Rails.env.development? %>
+            </div>
+        </div>
     </div>
   </body>
 </html>

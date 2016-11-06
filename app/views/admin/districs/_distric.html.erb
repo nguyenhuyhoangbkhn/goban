@@ -1,4 +1,4 @@
-<tr>
+<!-- <tr>
   <td class="center"><%= distric.name %></td>
   <td>
     <%= link_to t("distric.show"), admin_distric_path(distric),
@@ -13,4 +13,33 @@
       method: :delete, data: {confirm: t("distric.confirm")},
       class: "btn btn-danger icon-trash icon-white" %>
   </td>
-</tr>
+</tr> -->
+
+  <div class="form-group row">
+      <div >
+        <div class="dropdown form-drop-down">
+          <span class="glyphicon glyphicon-menu-down" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          </span>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                  <%= link_to t("distric.show"), admin_distric_path(distric),
+                    class: "btn icon-trash icon-white" %>
+            <li>
+                  <%= link_to t("distric.edit"), edit_admin_distric_path(distric),
+                    class: "btn icon-trash icon-white" %>             
+            </li>
+            <li>
+                 <%= link_to t("distric.delete"), admin_distric_path(distric),
+                    method: :delete, data: {confirm: t("distric.confirm")},
+                    class: "btn icon-trash icon-white" %>
+            </li>
+          </ul>
+        </div>
+        <span class="provincial-name"><%= distric.name %></span>
+        
+ 
+        
+      </div>
+      <div class="clear"></div>
+      <hr>
+  </div>
