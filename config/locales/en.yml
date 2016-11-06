@@ -39,6 +39,10 @@ en:
     edit_address_successful: "edit address successful"
     delete_address_successful: "delete address successful"
     delete_address_unsuccessful: "delete address successful"
+    new_hotel_successful: "add hotel successful"
+    edit_hotel_successful: "edit hotel successful"
+    delete_hotel_successful: "delete hotel successful"
+    delete_hotel_unsuccessful: "delete hotel successful"
   error:
     form: "Form: "
     error: "errors"
@@ -58,6 +62,11 @@ en:
     confirm: "Are you sure?"
     show: "Show"
   address:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  hotel:
     edit: "Edit"
     delete: "Delete"
     confirm: "Are you sure?"
