@@ -35,6 +35,10 @@ en:
     edit_village_successful: "edit village successful"
     delete_village_successful: "delete village successful"
     delete_village_unsuccessful: "delete village successful"
+    new_address_successful: "add address successful"
+    edit_address_successful: "edit address successful"
+    delete_address_successful: "delete address successful"
+    delete_address_unsuccessful: "delete address successful"
   error:
     form: "Form: "
     error: "errors"
@@ -49,6 +53,11 @@ en:
     confirm: "Are you sure?"
     show: "Show"
   village:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  address:
     edit: "Edit"
     delete: "Delete"
     confirm: "Are you sure?"

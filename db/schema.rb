@@ -15,11 +15,17 @@ ActiveRecord::Schema.define(version: 20161103133314) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "building_name"
-    t.integer  "addressale_id"
+    t.integer  "village_id"
+    t.integer  "distric_id"
+    t.integer  "provincial_id"
     t.integer  "addressale_kind"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  add_index "addresses", ["distric_id"], name: "index_addresses_on_distric_id"
+  add_index "addresses", ["provincial_id"], name: "index_addresses_on_provincial_id"
+  add_index "addresses", ["village_id"], name: "index_addresses_on_village_id"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"

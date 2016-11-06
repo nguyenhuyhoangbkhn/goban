@@ -1,0 +1,16 @@
+<tr>
+  <td class="center"><%= address.building_name %></td>
+  <td>
+    <%= link_to t("address.show"), admin_address_path(address),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("address.edit"), edit_admin_address_path(address),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("address.delete"), admin_address_path(address),
+      method: :delete, data: {confirm: t("address.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>
