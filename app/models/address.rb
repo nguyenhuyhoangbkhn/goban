@@ -2,6 +2,7 @@ class Address < ActiveRecord::Base
   belongs_to :distric
   belongs_to :village
   belongs_to :provincial
+  has_many :hotels, dependent: :destroy
   
   validates :building_name, presence: true, length: {maximum: 100}
   validate :check_address

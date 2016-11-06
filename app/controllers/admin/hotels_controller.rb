@@ -13,6 +13,11 @@ class Admin::HotelsController < ApplicationController
   def create
     @hotel = Hotel.new hotel_params
     if @hotel.save
+      unless params[:images].nil?
+        params[:images][:picture].each do |a|
+          @hotel.images.create!(picture: a)
+        end
+      end
       flash[:success] = t "message.new_hotel_successful"
       redirect_to admin_hotels_path
     else
@@ -44,6 +49,7 @@ class Admin::HotelsController < ApplicationController
 
   private
   def hotel_params
-    params.require(:hotel).permit :name
+    params.require(:hotel).permit :name, :introduction, :countRoom, :kind,
+      :address_id, :price, :phone_number, :websitehotel, :images
   end
 end
