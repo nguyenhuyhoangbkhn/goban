@@ -13,6 +13,9 @@
 <p>Site: <%= @hotel.websitehotel%></p>
 <p>Kind: <%= @hotel.kind%></p>
 <p>countRoom: <%= @hotel.countRoom%></p>
+<%= rating_for @hotel, "hotel", star: 5, disable_after_rate: false %>
+<%= @hotel.average("hotel").nil? ? "0" : @hotel.average("hotel").avg %>
+<p><%= @hotel.rates("hotel").count %></p>
 
 <div>
   <div id="comment-form">
