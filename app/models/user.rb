@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   before_save {self.email = email.downcase}
   
   mount_uploader :picture, PictureUploader
+  ratyrate_rater
   
   validates :name, presence: true, length: {maximum: 50}
   validate :picture_size
