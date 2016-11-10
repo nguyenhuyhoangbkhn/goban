@@ -19,9 +19,18 @@
 
   <span><%= comment.user.name %></span>:
   <span class="content"><%= comment.content unless comment.content.empty? %></span>
+
   <%= gravatar_for(comment.user, size: 50) unless  comment.image.nil? %>
   <span class="timestamp"><br>
     <%= time_tag comment.created_at %>
     
+  <% unless  comment.image.nil? %>
+    <%= image_tag comment.image, height: "100", with: "100" %>
+  <% end %>
+  <span class="timestamp">
+    <% if current_user?(comment.user) %>
+      <%= link_to "delete", hotel_comment_path(@hotel, comment), method: :delete,
+        data: { confirm: "You sure?" } %>
+  	<% end %>
   </span>
 </div>

@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
     belongs_to :user
     belongs_to :hotel
-    
+    mount_uploader :image, PictureUploader
     validate :check_content_image
     
     private
