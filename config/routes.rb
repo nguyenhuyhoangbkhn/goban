@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :hotels, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
   end
-  
+  resources :searchs, only: :index
   namespace :admin do
     root "mains#index"
     resources :provincials

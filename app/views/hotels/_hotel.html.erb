@@ -1,6 +1,6 @@
 <div class="col-sm-4">
   <div class="well well-sm">
-    <%= image_tag hotel.images.first.picture, height: "50", with: "50"  %>
+    <%= image_tag hotel.images.first.picture, height: "50", with: "50" unless hotel.images.empty? %>
     <p><%= link_to hotel.name, hotel_path(hotel) %></p>
     <p><%= hotel.price %></p>
   </div>

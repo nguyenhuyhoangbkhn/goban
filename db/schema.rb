@@ -51,8 +51,6 @@ ActiveRecord::Schema.define(version: 20161107143050) do
   create_table "districs", force: :cascade do |t|
     t.string   "name"
     t.integer  "provincial_id"
-    t.string   "latitude"
-    t.string   "longitude"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -153,8 +151,6 @@ ActiveRecord::Schema.define(version: 20161107143050) do
   create_table "villages", force: :cascade do |t|
     t.string   "name"
     t.integer  "distric_id"
-    t.string   "latitude"
-    t.string   "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

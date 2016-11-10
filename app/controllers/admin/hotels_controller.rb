@@ -2,6 +2,12 @@ class Admin::HotelsController < ApplicationController
   load_and_authorize_resource
   def index
     @hotels = @hotels.all.page(params[:page]).per 10
+    @search = @hotels.all.ransack params[:q]
+    if params[:q].nil?
+      @hotels = @hotels.page(params[:page]).per 10
+    else
+      @hotels = @search.result.page(params[:page]).per 10
+    end
   end
 
   def show
