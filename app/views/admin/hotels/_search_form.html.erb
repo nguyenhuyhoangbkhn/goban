@@ -1,0 +1,22 @@
+<div class="panel-body">
+  <%= search_form_for @search, url: admin_hotels_path do |f| %>
+    <div class="row">
+      <div class="large-4 small-3 col-sm-3">
+        <%= f.label :name_cont, "Name" %>
+        <%= f.text_field :name_cont, class: "form-control" %>
+      </div>
+      <div class="large-4 small-3 col-sm-3">
+        <%= f.label :countRoom_gteq, "Count Room From" %>
+        <%= f.number_field :countRoom_gteq, class: "form-control" %>
+        <%= f.label :countRoom_lteq, "Count Room To" %>
+        <%= f.number_field :countRoom_lteq, class: "form-control" %>
+      </div>
+      <div class="large-4 small-3 col-sm-3">
+        <%= f.label :address_building_name_cont, "Building Name" %>
+        <%= f.search_field :address_building_name_cont, class: "form-control" %>
+      </div>
+    </div>
+    <%= f.submit "Search", class: "btn btn-success col-sm-2" %>
+  <% end %>
+</div> 
+<hr>

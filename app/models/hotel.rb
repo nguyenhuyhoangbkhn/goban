@@ -10,4 +10,6 @@ class Hotel < ActiveRecord::Base
     validates :price, presence: true
     validates :phone_number, presence: true	
     validates :websitehotel, presence: true
+    
+    delegate :village, :to => :address, :allow_nil => true
 end
