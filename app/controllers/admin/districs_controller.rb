@@ -44,6 +44,6 @@ class Admin::DistricsController < ApplicationController
 
   private
   def distric_params
-    params.require(:distric).permit :name, :provincial_id, :latitude, :longitude
+    params.require(:distric).permit :name, :provincial_id
   end
 end

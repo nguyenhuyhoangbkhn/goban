@@ -27,9 +27,15 @@
           </li>
         <% end %>
       </ul>
-      <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-      </form>
+      <div class="navbar-form navbar-right">
+        <% @hotels = Hotel.all %>
+        <% @search = @hotels.ransack params[:q] %>
+        <%= search_form_for @search, url: searchs_path, method: :get do |f| %>
+        <%= f.text_field :name_cont, placeholder: "Input hotel's name",
+          class: "form-control" %>
+      <% end %>
+      </div>
     </nav>
   </div>
 </header>
+<!-- toi vua pull develop ve nhanh nay -->
