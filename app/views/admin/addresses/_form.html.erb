@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <%= form_for [:admin, @address] do |f| %>
+      <%= render "shared/error_messages", object: @address %>
+
+      <%= f.label :building_name %><br/>
+      <%= f.text_field :building_name, class: "form-control" %>
+      
+      <%= f.label :village_id %><br/>
+      <%= f.select :village_id, Village.all.collect { |p| [ p.name, p.id ] }, include_blank: true, class: "form-control" %>
+      
+      <%= f.label :distric_id %><br/>
+      <%= f.select :distric_id, Distric.all.collect { |p| [ p.name, p.id ] }, include_blank: true, class: "form-control" %>
+          
+      <%= f.label :provincial_id %><br/>
+      <%= f.select :provincial_id, Provincial.all.collect { |p| [ p.name, p.id ] }, include_blank: true, class: "form-control" %>
+       
+      <div class="actions">
+        <%= f.submit "Submit", class: "btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

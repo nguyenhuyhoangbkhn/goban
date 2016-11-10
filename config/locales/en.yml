@@ -1,23 +1,73 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  base_title: "Review Web"
+  logo: "Review"
+  home: "Home"
+  help: "Help"
+  about: "About"
+  contact: "Contact"
+  develop_by: "Developed by tsunami"
+  welcome: "Welcome to Review Web"
+  login: "Login"
+  edit_profile: "Edit profile"
+  update_profile: "Update profile"
+  log_out: "Log out"
+  user:
+    name_class: "user"
+    edit: "Edit"
+    log_out: "Log out"
+    login: "Log in"
+    edit_profile: "Edit profile"
+    update_profile: "Update profile"
+    update_profile: "Update profile"
+    sign_up: "Sign Up"
+    not_authorized: "You are not authorized to access this page"
+  message:
+    new_provincial_successful: "add provincial successful"
+    edit_provincial_successful: "edit provincial successful"
+    delete_provincial_successful: "delete provincial successful"
+    delete_provincial_unsuccessful: "delete provincial successful"
+    new_distric_successful: "add distric successful"
+    edit_distric_successful: "edit distric successful"
+    delete_distric_successful: "delete distric successful"
+    delete_distric_unsuccessful: "delete distric successful"
+    new_village_successful: "add village successful"
+    edit_village_successful: "edit village successful"
+    delete_village_successful: "delete village successful"
+    delete_village_unsuccessful: "delete village successful"
+    new_address_successful: "add address successful"
+    edit_address_successful: "edit address successful"
+    delete_address_successful: "delete address successful"
+    delete_address_unsuccessful: "delete address successful"
+    new_hotel_successful: "add hotel successful"
+    edit_hotel_successful: "edit hotel successful"
+    delete_hotel_successful: "delete hotel successful"
+    delete_hotel_unsuccessful: "delete hotel successful"
+  error:
+    form: "Form: "
+    error: "errors"
+  provincial:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  distric:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  village:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  address:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"
+  hotel:
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    show: "Show"

@@ -1,0 +1,18 @@
+<div class="col-sm-4">
+  <div class="well well-sm">
+    <%= image_tag hotel.images.first.picture,  class:"img-responsive img-home-content",
+    	alt:"Cinque Terre" %>
+    <p class="title-hotel"><%= link_to hotel.name, hotel_path(hotel) %></p>
+    <p class="row">
+	    <span class="col-sm-6">
+	    <%= hotel.average("hotel").nil? ? "0" : hotel.average("hotel").avg %>
+	    </span>
+	    <span class="col-sm-6">
+	    	<%= hotel.price %>
+	    </span>
+    </p>
+    <!-- hien thi duoi dang star -->
+    <p class="intro-hotel"><%= hotel.introduction %></p>
+    <p></p>
+  </div>
+</div>

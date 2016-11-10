@@ -1,14 +1,38 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+  <title><%= full_title yield :title %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": true %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": true %>
+    <%= csrf_meta_tags %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <div class="container row" >
+      <% if !current_user.nil? && current_user.admin?%>
+      <div class="col-md-3 col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="">Hotel</a></li>
+            <li><a href="#">City</a></li>
+            <li><a href="#">trousers</a></li>
+            <li><a href="#">village</a></li>
+            <li><a href="#">Setting</a></li>
+          </ul>
+        </div>
+        <% end %>
+        <div class="col-md-9 col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class= "clear"></div>
+            <br>
+            <div class="content-admin">
+              <% flash.each do |message_type, message| %>
+                <div class="infor-request alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+              <%= yield %>
+            </div>
+        </div>
+    </div>
+  </body>
 </html>
