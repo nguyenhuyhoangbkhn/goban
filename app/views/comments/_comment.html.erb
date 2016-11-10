@@ -1,13 +1,27 @@
-<li>
+<hr>
+
+<div class = "row">
+  <div class="dropdown form-drop-down">
+      <span class="glyphicon glyphicon-menu-down" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      </span>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+              <% if current_user?(comment.user) %>
+                <%= link_to "delete", hotel_comment_path(@hotel, comment), method: :delete,
+                  data: { confirm: "You sure?" } %>
+              <% end %>
+        <li style="padding-left:20px;">
+              Edit          
+        </li>
+      </ul>
+  </div>
   <%= gravatar_for comment.user, size: 50 %>
+
   <span><%= comment.user.name %></span>:
   <span class="content"><%= comment.content unless comment.content.empty? %></span>
   <%= gravatar_for(comment.user, size: 50) unless  comment.image.nil? %>
-  <span class="timestamp">
-    Posted: <%= time_tag comment.created_at %>
-    <% if current_user?(comment.user) %>
-      <%= link_to "delete", hotel_comment_path(@hotel, comment), method: :delete, remote: true,
-        data: { confirm: "You sure?" } %>
-  	<% end %>
+  <span class="timestamp"><br>
+    <%= time_tag comment.created_at %>
+    
   </span>
-</li>
+</div>
