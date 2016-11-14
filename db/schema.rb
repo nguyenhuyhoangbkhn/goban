@@ -13,20 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20161107143050) do
 
-  create_table "addresses", force: :cascade do |t|
-    t.string   "building_name"
-    t.integer  "village_id"
-    t.integer  "distric_id"
-    t.integer  "provincial_id"
-    t.integer  "addressale_kind"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "addresses", ["distric_id"], name: "index_addresses_on_distric_id"
-  add_index "addresses", ["provincial_id"], name: "index_addresses_on_provincial_id"
-  add_index "addresses", ["village_id"], name: "index_addresses_on_village_id"
-
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -48,29 +34,19 @@ ActiveRecord::Schema.define(version: 20161107143050) do
   add_index "comments", ["hotel_id"], name: "index_comments_on_hotel_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "districs", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "provincial_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "districs", ["provincial_id"], name: "index_districs_on_provincial_id"
-
   create_table "hotels", force: :cascade do |t|
     t.string   "name"
-    t.integer  "address_id"
     t.integer  "countRoom"
     t.text     "introduction"
     t.string   "kind"
     t.decimal  "price"
+    t.string   "address"
+    t.string   "building_name"
     t.string   "phone_number"
     t.string   "websitehotel"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
-  add_index "hotels", ["address_id"], name: "index_hotels_on_address_id"
 
   create_table "images", force: :cascade do |t|
     t.integer  "hotel_id"
@@ -87,12 +63,6 @@ ActiveRecord::Schema.define(version: 20161107143050) do
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "provincials", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "rates", force: :cascade do |t|
@@ -147,14 +117,5 @@ ActiveRecord::Schema.define(version: 20161107143050) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "villages", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "distric_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "villages", ["distric_id"], name: "index_villages_on_distric_id"
 
 end

@@ -15,7 +15,7 @@ gem "carrierwave" , "0.10.0"
 gem "cancancan"
 gem "kaminari"
 gem "kaminari-bootstrap", "~> 3.0.1"
-gem "ratyrate"
+gem 'ratyrate', git: "git://github.com/wazery/ratyrate.git"
 gem "ransack"
 
 group :development, :test do
