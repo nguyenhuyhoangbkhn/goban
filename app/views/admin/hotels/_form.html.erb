@@ -3,10 +3,6 @@
     <%= form_for [:admin, @hotel], html: { multipart: true } do |f| %>
       <%= render "shared/error_messages", object: @hotel %>
 
-      <%= f.label :address %><br/>
-      <%= f.select :address_id, Address.all.collect{|p| [p.building_name, p.id]},
-        class: "form-control" %>
-
       <%= f.label :name %><br/>
       <%= f.text_field :name, class: "form-control" %>
 
@@ -34,6 +30,12 @@
 
       <%= f.label :websitehotel %><br/>
       <%= f.text_field :websitehotel, class: "form-control"%>
+      
+      <%= f.label :address %><br/>
+      <%= f.text_field :address, class: "form-control"%>
+      
+      <%= f.label :building_name %><br/>
+      <%= f.text_field :building_name, class: "form-control"%>
 
       <div class="actions">
         <%= f.submit "Update", class: "btn-primary" %>

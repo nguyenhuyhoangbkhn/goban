@@ -20,6 +20,16 @@ class CommentsController < ApplicationController
     redirect_to hotel_path(@hotel)
   end
 
+  def update
+    @comment = Comment.find_by id: params[:id]
+    if @comment.update_attributes comment_params
+      flash[:success] = "Edit Comment success"
+    else
+      flash[:danger] = "Edit Comment unsuccess"
+    end
+    redirect_to hotel_path(@comment.hotel)
+  end
+
   private
   def comment_params
     params.require(:comment).permit( :content, :image)

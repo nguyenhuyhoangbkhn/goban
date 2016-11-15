@@ -11,7 +11,7 @@
                   data: { confirm: "You sure?" } %>
               <% end %>
         <li style="padding-left:20px;">
-              Edit          
+            <a href="#" data-toggle="modal" data-target="#myModal-<%= comment.id %>">Edit</a>
         </li>
       </ul>
   </div>
@@ -19,14 +19,12 @@
 
   <span><%= comment.user.name %></span>:
   <span class="content"><%= comment.content unless comment.content.empty? %></span>
-
-  <%= gravatar_for(comment.user, size: 50) unless  comment.image.nil? %>
+    <% unless  comment.image.file.nil? %>
+    <%= image_tag comment.image, height: "100", with: "100" %>
+  <% end %>
   <span class="timestamp"><br>
     <%= time_tag comment.created_at %>
     
-  <% unless  comment.image.nil? %>
-    <%= image_tag comment.image, height: "100", with: "100" %>
-  <% end %>
   <span class="timestamp">
     <% if current_user?(comment.user) %>
       <%= link_to "delete", hotel_comment_path(@hotel, comment), method: :delete,
@@ -34,3 +32,55 @@
   	<% end %>
   </span>
 </div>
+
+<div id="myModal-<%= comment.id %>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body row">
+            <div style="margin: 30px;">
+                <% @comment = comment %>
+                <%= form_for([ @hotel, @comment]) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+                  <%= f.text_area :content %>
+                  <%= f.file_field :image %>
+                  <%= f.submit "Edit", class: "btn btn-primary" %>
+                <% end %>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  /* activate scrollspy menu */
+$('body').scrollspy({
+  target: '#navbar-collapsible',
+  offset: 52
+});
+/* smooth scrolling sections */
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 50
+        }, 800);
+        if (this.hash=="#section1") {
+            $('.scroll-up').hide();
+        }
+        else {
+            $('.scroll-up').show();
+        }
+        // activte animations in this section
+        target.find('.animate').delay(1200).addClass("animated");
+        setTimeout(function(){
+            target.find('.animated').removeClass("animated");
+        },2000);
+        return false;
+      }
+    }
+});
+</script>

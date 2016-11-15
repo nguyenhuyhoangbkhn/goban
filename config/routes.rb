@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   post '/rate' => 'rater#create', :as => 'rate'
   get 'hotels/index'
 
@@ -8,16 +9,13 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "home" => "static_pages#home"
   resources :hotels, only: [:index, :show] do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :update]
   end
   resources :searchs, only: :index
   namespace :admin do
     root "mains#index"
-    resources :provincials
-    resources :districs
-    resources :villages
-    resources :addresses
     resources :hotels
     resources :main, only: :index
   end
+  resources :users,only: :show
 end

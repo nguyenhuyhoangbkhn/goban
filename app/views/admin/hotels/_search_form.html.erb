@@ -6,14 +6,18 @@
         <%= f.text_field :name_cont, class: "form-control" %>
       </div>
       <div class="large-4 small-3 col-sm-3">
+        <%= f.label :address_cont, "Address" %>
+        <%= f.text_field :address_cont, class: "form-control" %>
+      </div>
+      <div class="large-4 small-3 col-sm-3">
+        <%= f.label :building_name_cont, "Building name" %>
+        <%= f.text_field :building_name_cont, class: "form-control" %>
+      </div>
+      <div class="large-4 small-3 col-sm-3">
         <%= f.label :countRoom_gteq, "Count Room From" %>
         <%= f.number_field :countRoom_gteq, class: "form-control" %>
         <%= f.label :countRoom_lteq, "Count Room To" %>
         <%= f.number_field :countRoom_lteq, class: "form-control" %>
-      </div>
-      <div class="large-4 small-3 col-sm-3">
-        <%= f.label :address_building_name_cont, "Building Name" %>
-        <%= f.search_field :address_building_name_cont, class: "form-control" %>
       </div>
     </div>
     <%= f.submit "Search", class: "btn btn-success col-sm-2" %>
