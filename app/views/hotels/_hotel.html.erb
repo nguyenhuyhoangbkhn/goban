@@ -4,10 +4,13 @@
     	alt:"Cinque Terre" %>
     <p class="title-hotel"><%= link_to hotel.name, hotel_path(hotel) %></p>
     <p class="row">
-	    <span class="col-sm-6">
-	    <%= hotel.average("hotel").nil? ? "0" : hotel.average("hotel").avg %>
+	    <span class="col-sm-5">
+        Rate<br>
+        
+	    <%= hotel.average("hotel").nil? ? "0" : hotel.average("hotel").avg.round(1) %>
 	    </span>
-	    <span class="col-sm-6">
+	    <span class="col-sm-7" style="text-align:left;">
+            Price<br>
 	    	<%= hotel.price %>
 	    </span>
     </p>

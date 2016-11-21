@@ -1,4 +1,4 @@
-<tr>
+<!-- tr>
   <td class="center"><%= hotel.name %></td>
   <td>
     <%= link_to t("hotel.show"), admin_hotel_path(hotel),
@@ -13,7 +13,7 @@
       method: :delete, data: {confirm: t("hotel.confirm")},
       class: "btn btn-danger icon-trash icon-white" %>
   </td>
-</tr>
+</tr> -->
 
 <div class="form-group row">
       <div >
@@ -35,7 +35,11 @@
             </li>
           </ul>
         </div>
-        <span class="provincial-name"><%= hotel.name %></span>
+        <span class="provincial-name">
+          <%= hotel.name %>
+          <%= hotel.introduction %>
+
+        </span>
         
  
         

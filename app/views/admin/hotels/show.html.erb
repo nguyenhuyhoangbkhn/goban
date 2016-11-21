@@ -1,16 +1,56 @@
-<% unless @hotel.images.nil? %>
-  <% @hotel.images.each do |image| %>
-    <div class="item">
-      <%= image_tag image.picture, height: "40", with: "100" %>
-    </div>
-  <% end %>
-<% end %>
-<p>Name: <%= @hotel.name %></p>
-<p>Price: <%= @hotel.price %></p>
-<p>Intro: <%= @hotel.introduction%></p>
-<p>phone: <%= @hotel.phone_number%></p>
-<p>Site: <%= @hotel.websitehotel%></p>
-<p>Kind: <%= @hotel.kind%></p>
-<p>Address: <%= @hotel.address%></p>
-<p>countRoom: <%= @hotel.countRoom%></p>
 
+<div class="row">
+  <div class="w3-content w3-display-container row form-detail-img col-md-6">
+    <% unless @hotel.images.nil? %>
+      <% @hotel.images.each do |image| %>
+        <div class="item">
+          <%= image_tag image.picture,  class:"mySlides img-thumbnail"%>
+        </div>
+      <% end %>
+    <% end %>
+    <a class="w3-btn-floating w3-display-left a-left-1" onclick="plusDivs(-1)">&#10094;</a>
+    <a class="w3-btn-floating w3-display-right a-right-1" onclick="plusDivs(1)">&#10095;</a>
+  </div>
+  <div class="col-md-6 content-detail">
+      <p class="hotel-title-detail"><%= @hotel.name %></p>
+     
+      <!-- can chuyen no thanh dang sao -->
+     <%= @hotel.average("hotel").nil? ? "0" : @hotel.average("hotel").avg %>
+      <p>Hotel is <%= @hotel.kind%> width <%= @hotel.phone_number%> rooms</p>
+      <p><%= @hotel.address unless @hotel.address.nil? %></p>
+      <p class="hotel-intro-detail"><%= @hotel.introduction%></p>
+      <p> 
+        <span>Contact us</span><br>
+        by phone: <%= @hotel.phone_number%><br>
+        by website: <%= @hotel.websitehotel%>
+      </p>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>

@@ -3,6 +3,7 @@ class Comment < ActiveRecord::Base
     belongs_to :hotel
     mount_uploader :image, PictureUploader
     validate :check_content_image
+    validates :content, presence: true
     
     private
     def check_content_image

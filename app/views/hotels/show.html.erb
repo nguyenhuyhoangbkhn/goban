@@ -16,6 +16,8 @@
           <button type="button" class="btn btn-info btn-lg btn-rate" data-toggle="modal" data-target="#myModal">Rate hotel</button>
       </p>
       <!-- can chuyen no thanh dang sao -->
+      <!-- <%= @hotel.average("hotel").nil? ? "0" : @hotel.average("hotel").avg %> -->
+      <p style="display:flex;">Rate: <%= rating_for @hotel, "hotel", star: 5, disable_after_rate: true %></p>
       <p>Hotel is <%= @hotel.kind%> width <%= @hotel.phone_number%> rooms</p>
       <p><%= @hotel.address unless @hotel.address.nil? %></p>
       <p class="hotel-intro-detail"><%= @hotel.introduction%></p>
@@ -27,29 +29,25 @@
 
   </div>
 
-</div>
-
-
-
-<div>
-  <div id="comment-form">
-  	<%= render 'shared/comment_form' if user_signed_in? %>
-  </div>
-  <div class="col-md-12">
-      <% if @hotel.comments.any? %>
-       <!--  Comments:
-        <strong id="comment_number">
-          <%= @hotel.comments.count %>
-        </strong> -->
-        <ol class="hotel row">
-        	<div id = 'comments'>      
-  	        <%= render @comments %>
-  	   	</div>
-         </ol>
-        <%= paginate @comments %>
-      <% end %>
+  <div class="form-comment">
+    <div id="comment-form">
+    	<%= render 'shared/comment_form' if user_signed_in? %>
+    </div>
+    <div class="row">
+        <% if @hotel.comments.any? %>
+          <ol class="hotel row">
+          	<div id = 'comments'>      
+    	        <%= render @comments %>
+    	   	</div>
+           </ol>
+          <%= paginate @comments %>
+        <% end %>
+    </div>
   </div>
 </div>
+
+
+
 
 
 
@@ -65,10 +63,6 @@
         </div>
         <div class="modal-body">
           <p><%= rating_for @hotel, "hotel", star: 5, disable_after_rate: false %></p>
-          <p><%= rating_for @hotel, "price", star: 5, disable_after_rate: false %></p>
-          <p><%= rating_for @hotel, "rate1", star: 5, disable_after_rate: false %></p>
-          <p><%= rating_for @hotel, "rate2", star: 5, disable_after_rate: false %></p>
-          <p><%= rating_for @hotel, "rate3", star: 5, disable_after_rate: false %></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

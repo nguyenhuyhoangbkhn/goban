@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to t(:logo), root_path, id: "logo" %>
+  <div style="padding:0px 15px;">
+    <%= link_to t(:logo), hotels_index_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t(:home), root_path %></li>
@@ -28,7 +28,7 @@
           </li>
         <% end %>
       </ul>
-      <div class="navbar-form navbar-right">
+      <div class="navbar-form form-input-search navbar-right">
         <% @hotels = Hotel.all %>
         <% @search = @hotels.ransack params[:q] %>
         <%= search_form_for @search, url: searchs_path, method: :get do |f| %>

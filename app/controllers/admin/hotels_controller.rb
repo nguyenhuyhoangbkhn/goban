@@ -18,7 +18,7 @@ class Admin::HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new hotel_params
-    byebug
+# nham fordel thao nao :3
     if @hotel.save
       unless params[:images].nil?
         params[:images][:picture].each do |a|

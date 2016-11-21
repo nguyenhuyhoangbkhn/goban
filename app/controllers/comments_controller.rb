@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @hotel = Hotel.find_by id: params[:hotel_id]
 	  @comment = @hotel.comments.build(comment_params)
     @comment.user_id = current_user.id
+    
 	if @comment.save
   	  redirect_to hotel_path(@hotel)
 	else

@@ -1,4 +1,11 @@
-<h1>Users#show</h1>
-<%= gravatar_for @user, size: 100 %>
-<%= @user.name %>
-<%= @user.email %>
+<h1>Profile <%= @user.name %></h1>
+<div class="profile-form">
+	<div>
+		<%= gravatar_for @user %>
+	</div>
+	<div>
+		<%= @user.name %><br>
+		<%= @user.email %><br>
+		<%= @user.phone %>
+	</div>
+</div>
